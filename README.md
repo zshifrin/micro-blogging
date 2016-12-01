@@ -1,4 +1,4 @@
-# Pygmy
+# PYGMY
 
 ## Routes
 
