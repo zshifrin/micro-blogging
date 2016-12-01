@@ -1,11 +1,12 @@
 # app.rb
 require 'sinatra'
 require 'sinatra/activerecord'
-require './models'
-require 'bundler/setup'
 require 'sinatra/flash'
+require 'bundler/setup'
+require './models'
 
 enable :sessions
 
 set :sessions, true
-set :database, "sqlite3:project-name.sqlite3"
+set :database, "sqlite3:pygmy.sqlite3"
+
