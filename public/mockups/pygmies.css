@@ -67,6 +67,9 @@ body {
 	color: #000;
 }
 
-/*#navdiv {
-	font-family: 'Josefin Slab', serif;
-}*/
+#registerForm {
+	width: 300px;
+	height: 500px;
+	margin: 0 auto;
+	padding: 50px;
+}
