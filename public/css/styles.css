@@ -3,7 +3,7 @@ body {
     background-color: #ffebc0;
 }
 
-#nav {
+#main-nav {
     height:  170px;
     background-color: #ffb732;
     border: none;
@@ -14,11 +14,7 @@ body {
     margin-left: -90px;
 }
 
-.navbar {
-    position: relative;
-}
-
-.navbar .nav {
+#main-nav .nav {
     padding-top: 120px;
 }
 
@@ -40,27 +36,20 @@ body {
 }
 
 .navbar-default .navbar-nav>li>a,
- .navbar-default .navbar-nav>li>a:focus,
- .navbar-default .navbar-nav>li>a:active,
- .navbar-default .navbar-nav>li>a:visited {
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>li>a:visited {
     color: #000;
 }
 
- .navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover {
     color: #ff0080;
- }
-
-
-.navbar .navbar-collapse {
-    position: absolute;
-    left: 420px;
-    bottom: 0;
 }
 
 #dropmenu:hover,
 #dropmenu:focus,
 #dropmenu:active {
-    background-color:  orange;
+    background-color: orange;
 }
 
 #anotherdrop:hover,
@@ -82,21 +71,16 @@ body {
 }
 
 #site-footer {
+    margin-top: 15px;
+    min-height: 150px;
     font-size: 17px;
     color: white;
-    padding-right: 100px;
     padding-top: 40px;
     background: #333;
 }
 
 .im-centered {
     margin-left: 10%;
-}
-
-#site-footer {
-    margin-top: 15px;
-    min-height: 150px;
-    padding-left: 430px;
 }
 
 .fa {
