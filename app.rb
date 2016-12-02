@@ -35,8 +35,13 @@ post '/users' do
   redirect '/'
 end
 
+get '/login' do
+  erb :login
+end
+
 post '/login' do
-  @user = User.find_by_sql(['SELECT * FROM users WHERE username = ? OR email = ?', params[:sign_in_field], params[:sign_in_field]]).first
+  query = 'SELECT * FROM users WHERE username = :field OR email = :field'
+  @user = User.find_by_sql([query, {field: params[:sign_in_field]}]).first
 
   if @user && @user.password == Hasher.make(params[:password])
     session[:user_id] = @user.id
@@ -59,9 +64,9 @@ get '/:username' do
 
 end
 
-get '/accounts/:id/edit'
+get '/accounts/:id/edit' do
 	#shows form for editing account
-	erb :"accounts/edit"
+	# erb :"accounts/edit"
 end
 
 post '/posts' do

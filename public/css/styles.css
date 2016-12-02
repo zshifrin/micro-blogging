@@ -1,29 +1,29 @@
 body {
-	font-family: 'Josefin Slab', serif;
-	background-color: black;
+    font-family: 'Josefin Slab', serif;
+    background-color: #ffebc0;
 }
 
 #nav {
     height:  170px;
-    background-color: #ffb732 ;
+    background-color: #ffb732;
     border: none;
 }
 
 #goat img {
-	width: 400px;
+    width: 400px;
 }
 
 .navbar {
-	position: relative;
+    position: relative;
 }
 
 .navbar a:visited,
 .navbar a:active {
-	color: #000;
+    color: #000;
 }
 
 .navbar-default .navbar-nav > .active > a {
-	background-color: #ffd27f;
+    background-color: #ffd27f;
 }
 
 .navbar-default .navbar-nav > .active > a:hover,
@@ -31,54 +31,57 @@ body {
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:active,
 .navbar-default .navbar-nav > .active > a:visited {
-	background-color: orange;
+    background-color: orange;
 }
 
 .navbar-default .navbar-nav>li>a,
  .navbar-default .navbar-nav>li>a:focus,
  .navbar-default .navbar-nav>li>a:active,
  .navbar-default .navbar-nav>li>a:visited {
-	color: #000;
+    color: #000;
 }
 
  .navbar-default .navbar-nav>li>a:hover {
- 	color: #ff0080;
+    color: #ff0080;
  }
 
 
 .navbar .navbar-collapse {
-	position: absolute;
-	left: 420px;
-	bottom: 0;
+    position: absolute;
+    left: 420px;
+    bottom: 0;
 }
 
 #dropmenu:hover,
 #dropmenu:focus,
 #dropmenu:active {
-	background-color:  orange;
+    background-color:  orange;
 }
 
 #anotherdrop:hover,
 #anotherdrop:focus,
 #anotherdrop:active {
-	background-color: orange;
+    background-color: orange;
 }
 
 .navButton {
-	font-size: 25px;
-	color: #000;
+    font-size: 25px;
+    color: #000;
 }
 
 #registerForm {
-	width: 300px;
-	height: 500px;
-	margin: 0 auto;
-	padding: 50px;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 50px;
 }
 
-#footerText {
+#site-footer {
     font-size: 17px;
     color: white;
+    padding-right: 100px;
+    padding-top: 40px;
+    background: #333;
 }
 
 .im-centered {
@@ -88,8 +91,7 @@ body {
 #site-footer {
     margin-top: 15px;
     min-height: 150px;
-    position: absolute;
-    bottom: 0;
+    padding-left: 430px;
 }
 
 .fa {
@@ -122,14 +124,17 @@ a:focus, a:hover {
     width: 100%;
     height: 40px;
     background-color: #ffb732 ;
-    position: absolute;
-    bottom: 0;
     text-align: center;
     vertical-align: middle;
     line-height: 40px;
 }
 
 #submitButton {
-	background-color: #ff0080;
-	font-size: 20px;
+    background-color: #ff0080;
+    font-size: 20px;
+}
+
+#main {
+    padding-top: 100px;
+    min-height: 380px;
 }

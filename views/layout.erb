@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
-    <title>Register</title>
+    <title>Zach's Pygmies</title>
 </head>
 
 <body>
@@ -36,27 +37,39 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div id="registerForm">
-        <form>
-            <!--Username:<br>-->
-            <input type="text" name="username" placeholder="Username">
-            <br>
-            <br>
-            <!--E-mail:<br>-->
-            <input type="email" name="password" placeholder="Password">
-            <br>
-            <br>
-            <!--Password:<br>-->
-            <input type="password" name="email" placeholder="Email Address">
-            <br>
-            <br>
-            <!--Biography:<br>-->
-            <textarea name="biography" placeholder="Biography"></textarea>
-            <br>
-            <br>
-            <input type="submit" value="Submit" id="submitButton">
-        </form>
+
+    <%= yield %>
+
+    <div class="im-centered">
+        <div id="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4" id="footerText">
+                        Pygmy was developed by:
+                        <br> The first NYCDA Austin
+                        <br> www.pygmy.com
+                        <br>
+                    </div>
+                    <!-- .col-sm-4 -->
+                    <div class="col-sm-4" id="footerText">
+                        A personl messaging service for goat lovers.
+                    </div>
+                    <!-- .col-sm-4 -->
+                    <div class="col-sm-4">
+                        <a href="http://www.facebook.com"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+                        <a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-cc-paypal fa-3x" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- .col-sm-4 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- #site-footer -->
     </div>
+    <!-- Im centered div -->
+    <div id="bottomstrip"> We appreciate your visit to Pygmy - Come back and see us!</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
