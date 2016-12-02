@@ -1,10 +1,12 @@
 body {
 	font-family: 'Josefin Slab', serif;
+	background-color: black;
 }
 
 #nav {
-	height:  200px;
-	background-color: #ffb732;
+    height:  170px;
+    background-color: #ffb732 ;
+    border: none;
 }
 
 #goat img {
@@ -32,6 +34,17 @@ body {
 	background-color: orange;
 }
 
+.navbar-default .navbar-nav>li>a,
+ .navbar-default .navbar-nav>li>a:focus,
+ .navbar-default .navbar-nav>li>a:active,
+ .navbar-default .navbar-nav>li>a:visited {
+	color: #000;
+}
+
+ .navbar-default .navbar-nav>li>a:hover {
+ 	color: #ff0080;
+ }
+
 
 .navbar .navbar-collapse {
 	position: absolute;
@@ -51,6 +64,67 @@ body {
 	background-color: orange;
 }
 
-/*#navdiv {
-	font-family: 'Josefin Slab', serif;
-}*/
+.navButton {
+	font-size: 25px;
+	color: #000;
+}
+
+#registerForm {
+	width: 300px;
+	height: 500px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+#footerText {
+    font-size: 17px;
+    color: white;
+}
+
+.im-centered {
+    margin-left: 10%;
+}
+
+#site-footer {
+    margin-top: 15px;
+    min-height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.fa {
+        font-size: 40px;
+ }
+
+a {
+   color: #f48042 ;
+   text-decoration: none;
+}
+
+a:focus, a:hover {
+   color: white;
+}
+
+.fa-facebook {
+    margin-right: 15px;
+}
+
+.fa-twitter {
+    margin-right: 15px;
+}
+
+.fa-paypal {
+    margin-right: 15px;
+
+}
+
+#bottomstrip {
+    width: 100%;
+    height: 40px;
+    background-color: #ffb732 ;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
