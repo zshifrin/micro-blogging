@@ -10,11 +10,16 @@ body {
 }
 
 #goat img {
-    width: 400px;
+    width: 340px;
+    margin-left: -90px;
 }
 
 .navbar {
     position: relative;
+}
+
+.navbar .nav {
+    padding-top: 120px;
 }
 
 .navbar a:visited,
@@ -135,6 +140,6 @@ a:focus, a:hover {
 }
 
 #main {
-    padding-top: 100px;
+    padding-top: 40px;
     min-height: 380px;
 }
