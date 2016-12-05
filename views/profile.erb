@@ -2,11 +2,21 @@
 	<div class="row">
 		<div class="col-md-4">
 			<img src="http://placehold.it/250x250" class="img-responsive img-rounded" alt="responsive profile image">
-			<h2>Username</h2>
+			<h2><%= @user.name %></h2>
+
+<!-- 			if current user is following this user show unfollow button
+			else
+			show follow button -->
 			<button type="button" class="btn btn-sm btn-primary">Follow</button>
+
 			<p id="profileBio">Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate perspiciatis nam facilis aperiam fuga itaque incidunt delectus, reprehenderit veniam ratione minima, possimus voluptas aliquid sed temporibus, excepturi, modi voluptatibus. Adipisci.</p>
 			<button type="button" id="editProfileBtn" class="btn btn-sm btn-info">Edit Profile</button>
 		</div>
+
+		<form action="/users/<%= @user.id %>/follow" method="POST">
+			<input type="hidden" name="_method" value="DELETE" />
+			<input type="submit" value="DELETE">
+		</form>
 
 		<div class="col-md-8">
 		<input type="text" class="form-control" placeholder="Post Title">

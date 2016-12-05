@@ -98,11 +98,14 @@ post '/users/:id/follow' do
 end
 
 delete '/users/:id/follow' do
-  #unfollows target
+  target = User.find(params[:id])
+  Follow.where(user_id: current_user.id, target_id: target.id).first.destroy
+  redirect '/'
 end
 
-delete '/accounts/:id' do
-	#deletes account :id
+delete '/users/:id' do
+  User.find(params[:id]).destroy
+  redirect '/register'
 end
 
 get '/login' do

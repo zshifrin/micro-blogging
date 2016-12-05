@@ -4,7 +4,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.0]
       t.string :username, null: false
       t.string :name, null: false
       t.string :email, null: false
-      t.text :bio, limit: 4294967295, null: false
+      t.text :bio, limit: 4294967295, default: '', null: true
       t.string :password, null: false
       t.string :photo
       t.timestamps
