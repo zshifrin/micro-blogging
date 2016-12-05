@@ -5,7 +5,7 @@
 		<div class="col-md-4">
 			<img src="http://placehold.it/250x250" class="img-responsive" alt="responsive profile image">
 			<h2>Username</h2>
-			<button type="button" class="btn btn-sm btn-primary">Follow</button>
+			<button type="button" class="btn btn-sm btn-warning">Unfollow</button>
 			<p id="profileBio">Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate perspiciatis nam facilis aperiam fuga itaque incidunt delectus, reprehenderit veniam ratione minima, possimus voluptas aliquid sed temporibus, excepturi, modi voluptatibus. Adipisci.</p>
 		</div>
 
