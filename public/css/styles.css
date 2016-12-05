@@ -116,8 +116,19 @@ a:focus, a:hover {
     margin-top: 10px;
 }
 
-#editProfileBtn {
+#edit-profile-btn {
     margin-bottom: 10px;
+}
+
+#follow-btn {
+    background-color: #DC5383;
+    border-color: #84314e;
+    color: #ffffff;
+}
+
+#follow-btn:hover {
+    background-color: #ba466f;
+    border-color: #84314e;    
 }
 
 #bottomstrip {
@@ -131,11 +142,13 @@ a:focus, a:hover {
 
 .btn-primary {
     background-color: #DC5383;
+    border-color: #84314e;
     font-size: 20px;
 }
 
 .btn-primary:hover {
-    background-color: #ba466f
+    background-color: #ba466f;
+    border-color: #84314e;
 }
 
 #main {
