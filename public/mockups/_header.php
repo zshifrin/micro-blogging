@@ -1,3 +1,4 @@
+<!-- user not logged in-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav">
-                <li class="navButton"><a href="#">Sign In<span class="sr-only">(current)</span></a></li>
+                <li class="navButton"><a href="#">Sign In<span class="sr-only">(current)</span></a></li><!-- if signed in, change innerText to "Sign Out"-->
                 <li><a href="#" class="navButton">Register</a></li>
             </ul>
         </div>
