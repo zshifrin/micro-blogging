@@ -72,7 +72,27 @@ end
 
 get '/accounts/:id/edit' do
 	# shows form for editing account
+  @user = User.find(params[:id])
 	erb :"accounts/edit"
+end
+
+post '/accounts/:id/edit' do
+  @user = User.find(params[:id])
+  @user.username = params[:username]
+  @user.email = params[:email]
+  @user.bio = params[:bio]
+  # set all other properties
+  # have conditionals optional properties
+  puts params.inspect
+
+  # current && new match,then Hasher.make(new_password_value)
+  is_setting_password = !params[:new_password].empty? && !params[:current_password].empty?
+  password_confirms = @user.password == Hasher.make(params[:current_password]) && params[:new_password] == params[:confirm_password]
+  if is_setting_password && password_confirms
+    @user.password = Hasher.make(params[:new_password])
+  end
+  #if current password and new password are not empty and new password matches confirm password set user.password equal new password
+  @user.save
 end
 
 # post '/posts', auth: true do
