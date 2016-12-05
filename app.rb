@@ -61,6 +61,7 @@ end
 
 get '/accounts/:id/edit'
 	#shows form for editing account
+	@user 
 	erb :"accounts/edit"
 end
 
