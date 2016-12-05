@@ -108,6 +108,18 @@ a:focus, a:hover {
 
 }
 
+#postBodyForm {
+    margin: 10px 0 10px 0;
+}
+
+#profileBio {
+    margin-top: 10px;
+}
+
+#editProfileBtn {
+    margin-bottom: 10px;
+}
+
 #bottomstrip {
     width: 100%;
     height: 40px;
