@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20161201211809) do
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",                         null: false
-    t.string   "slug",                          null: false
     t.text     "content",    limit: 4294967295, null: false
     t.integer  "user_id"
     t.datetime "created_at",                    null: false

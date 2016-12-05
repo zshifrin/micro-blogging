@@ -4,6 +4,10 @@ def current_user
   end
 end
 
+def logged_in?
+  !session[:user_id].nil?
+end
+
 module CoreExtensions
   module String
     def to_slug

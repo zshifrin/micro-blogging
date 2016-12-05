@@ -39,18 +39,15 @@ users = [
 	{username: 'pygmyuser', name: 'Bo Barker', email: 'bobarker@gmail.com', bio: LOREM, password: Hasher.make('priceisright'), photo: 'placeholder.png'}
 ]
 
-# User.destroy_all
 users.each do |user|
   User.create(user)
 end
 
-# Post.destroy_all
 100.times do |i|
-  title = "Example Post #{i}"
-  u = Post.create({title: title, slug: title.to_slug, content: LOREM, user_id: random_user_id})
+  content = "Example Pygmy #{i}"
+  u = Post.create({content: content, user_id: random_user_id})
 end
 
-# Follow.destroy_all
 20.times do |i|
   create_follow
 end
