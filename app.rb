@@ -18,6 +18,8 @@ db_database = 'micro_blog'
 set :database, "mysql2://#{db_username}:#{db_password}@#{db_host}:#{db_port}/#{db_database}"
 # set :database, "sqlite3:pygmy.sqlite3"
 
+require './mockup_routes'
+
 get '/' do
   # if user is logged, show their posts
   # else show latest 10 posts of any user
@@ -92,8 +94,6 @@ end
 delete '/accounts/:id' do
 	#deletes account :id
 end
-
-
 
 
 
