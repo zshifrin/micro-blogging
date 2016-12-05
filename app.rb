@@ -8,7 +8,15 @@ require './hasher'
 enable :sessions
 
 set :sessions, true
-set :database, "sqlite3:pygmy.sqlite3"
+
+db_username = 'root'
+db_password = 'root'
+db_host = '127.0.0.1'
+db_port = 3306
+db_database = 'micro_blog'
+
+set :database, "mysql2://#{db_username}:#{db_password}@#{db_host}:#{db_port}/#{db_database}"
+# set :database, "sqlite3:pygmy.sqlite3"
 
 def current_user
   if session[:user_id]
@@ -33,10 +41,6 @@ post '/users' do
     photo: params[:photo]
   })
   redirect '/'
-end
-
-get '/login' do
-  erb :login
 end
 
 post '/login' do
@@ -66,7 +70,8 @@ end
 
 get '/accounts/:id/edit' do
 	#shows form for editing account
-	# erb :"accounts/edit"
+	@user 
+	erb :"accounts/edit"
 end
 
 post '/posts' do
