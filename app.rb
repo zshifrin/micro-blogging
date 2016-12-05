@@ -5,6 +5,7 @@ require 'bundler/setup'
 require './helpers'
 require './models'
 require './hasher'
+require './mockup_routes'
 
 enable :sessions
 set :sessions, true
@@ -18,13 +19,30 @@ db_database = 'micro_blog'
 set :database, "mysql2://#{db_username}:#{db_password}@#{db_host}:#{db_port}/#{db_database}"
 # set :database, "sqlite3:pygmy.sqlite3"
 
-require './mockup_routes'
-
 get '/' do
   # if user is logged, show their posts
   # else show latest 10 posts of any user
-  @posts = current_user ? current_users.posts : Post.take(10)
+  @posts = current_user ? current_user.posts : Post.take(10)
   erb :index
+end
+
+get '/register' do
+  erb :register  
+end
+
+post '/register' do
+  
+  u = User.create({
+      name: params[:name],
+      username: params[:username],
+      password: Hasher.make(params[:password]),
+      email: params[:email],
+      bio: params[:bio]
+  })
+
+  session[:user_id] = u.id
+
+  redirect '/'
 end
 
 post '/users' do
