@@ -49,30 +49,22 @@ post '/login' do
   else
     flash[:error] = "There was a problem signing you in."
   end
-  redirect "/"
-end
-
-get '/:username' do
-	@user = User.where(username: params[:username]).first
-
-	if @user.nil?
-		status(404)
-		erb :oops
-	else
-		erb :profile
-	end
+  redirect '/'
 end
 
 get '/accounts/:id/edit' do
-	#shows form for editing account
+	# shows form for editing account
 	erb :"accounts/edit"
 end
 
+# post '/posts', auth: true do
 post '/posts' do
   Post.create({
-
+    content: params[:content],
+    user_id: current_user.id
   })
-	#store post in db
+
+  redirect '/profiles'
 end
 
 delete '/posts/:id' do
@@ -88,16 +80,27 @@ post '/users/:id/follow' do
 end
 
 delete '/users/:id/follow' do
-#unfollows target
+  #unfollows target
 end
 
 delete '/accounts/:id' do
 	#deletes account :id
 end
 
+get '/login' do
+  erb :login
+end
 
+get '/:username' do
+  @user = User.where(username: params[:username]).first
 
-
+  if @user.nil?
+    status(404)
+    erb :oops
+  else
+    erb :profile
+  end
+end
 
 
 

@@ -108,6 +108,29 @@ a:focus, a:hover {
 
 }
 
+#postBodyForm {
+    margin: 10px 0 10px 0;
+}
+
+#profileBio {
+    margin-top: 10px;
+}
+
+#edit-profile-btn {
+    margin-bottom: 10px;
+}
+
+#follow-btn {
+    background-color: #DC5383;
+    border-color: none;
+    color: #ffffff;
+}
+
+#follow-btn:hover {
+    background-color: #ba466f;
+    border-color: #84314e;    
+}
+
 #bottomstrip {
     width: 100%;
     height: 40px;
@@ -119,11 +142,15 @@ a:focus, a:hover {
 
 .btn-primary {
     background-color: #e50073;
+    background-color: #DC5383;
+    border-color: #84314e;
     font-size: 20px;
 }
 
 .btn-primary:hover {
     background-color: #cc0066;
+    background-color: #ba466f;
+    border-color: #84314e;
 }
 
 #main {
