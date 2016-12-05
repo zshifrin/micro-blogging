@@ -1,3 +1,5 @@
+require './helpers'
+
 class User < ActiveRecord::Base
   has_many :posts
 

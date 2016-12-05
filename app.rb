@@ -2,11 +2,11 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'bundler/setup'
+require './helpers'
 require './models'
 require './hasher'
 
 enable :sessions
-
 set :sessions, true
 
 db_username = 'root'
@@ -17,12 +17,6 @@ db_database = 'micro_blog'
 
 set :database, "mysql2://#{db_username}:#{db_password}@#{db_host}:#{db_port}/#{db_database}"
 # set :database, "sqlite3:pygmy.sqlite3"
-
-def current_user
-  if session[:user_id]
-  	@current_user = User.find(session[:user_id])
-  end
-end
 
 get '/' do
   # if user is logged, show their posts
@@ -65,16 +59,17 @@ get '/:username' do
 	else
 		erb :profile
 	end
-
 end
 
 get '/accounts/:id/edit' do
 	#shows form for editing account
-	@user 
 	erb :"accounts/edit"
 end
 
 post '/posts' do
+  Post.create({
+
+  })
 	#store post in db
 end
 
