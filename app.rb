@@ -114,7 +114,14 @@ put '/posts/:id' do
 end
 
 post '/users/:id/follow' do
-#follows target
+  @target = User.find(params[:id])
+
+  if @target.nil?
+    status(404)
+    erb :oops
+  else
+    Follow.create(user_id: current_user.id, params[:id])
+  end
 end
 
 delete '/users/:id/follow' do

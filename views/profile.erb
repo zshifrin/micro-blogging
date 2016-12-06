@@ -7,7 +7,10 @@
 <!-- 			if current user is following this user show unfollow button
 			else
 			show follow button -->
-			<button type="button" id="follow-btn" class="btn btn-sm btn-default">Follow</button>
+			
+			<form action="/users/<%= @user.id %>/follow" method="POST">
+				<input id="follow-btn" class="btn btn-default btn-sm" type="submit" value="Follow">
+			</form>
 
 			<form action="/users/<%= @user.id %>/follow" method="POST">
 				<input type="hidden" name="_method" value="DELETE" />
