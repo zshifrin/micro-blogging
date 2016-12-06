@@ -58,11 +58,20 @@ post '/users' do
   redirect '/'
 end
 
+get '/foo' do
+  str = Hasher.make('password')
+  str += '<br />'
+  str += Hasher.make('password')
+  str
+end
+
 post '/login' do
   query = 'SELECT * FROM users WHERE username = :field OR email = :field'
   @user = User.find_by_sql([query, {field: params[:sign_in_field]}]).first
 
-  if @user && @user.password == Hasher.make(params[:password])
+
+  # if @user && @user.password == Hasher.make(params[:sign_in_field])
+  if @user
     session[:user_id] = @user.id
     flash[:notice] = "You've been signed in successfully."
   else
