@@ -11,19 +11,19 @@ end
 # POST EDIT USER FORM
 #
 post '/users/:id/edit' do
-  @user = User.find(params[:id])
-  @user.username = params[:username]
-  @user.email = params[:email]
-  @user.bio = params[:bio]
+  user = User.find(params[:id])
+  user.username = params[:username]
+  user.email = params[:email]
+  user.bio = params[:bio]
 
   is_setting_password = !params[:new_password].empty? && !params[:current_password].empty?
-  password_confirms = @user.password == Hasher.make(params[:current_password]) && params[:new_password] == params[:confirm_password]
+  password_confirms = user.password == Hasher.make(params[:current_password]) && params[:new_password] == params[:confirm_password]
 
   if is_setting_password && password_confirms
-    @user.password = Hasher.make(params[:new_password])
+    user.password = Hasher.make(params[:new_password])
   end
 
-  @user.save
+  user.save
 end
 
 #
@@ -53,6 +53,7 @@ post '/users' do
     bio: params[:bio],
     photo: params[:photo]
   })
+
   redirect '/'
 end
 
