@@ -7,21 +7,26 @@
 <!-- 			if current user is following this user show unfollow button
 			else
 			show follow button -->
-			<button type="button" class="btn btn-sm btn-primary">Follow</button>
+			
+			<form action="/users/<%= @user.id %>/follow" method="POST">
+				<input id="follow-btn" class="btn btn-default btn-sm" type="submit" value="Follow">
+			</form>
+
+			<form action="/users/<%= @user.id %>/follow" method="POST">
+				<input type="hidden" name="_method" value="DELETE" />
+				<input class="btn btn-warning btn-sm" type="submit" value="Unfollow">
+			</form>
 
 			<p id="profileBio">Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate perspiciatis nam facilis aperiam fuga itaque incidunt delectus, reprehenderit veniam ratione minima, possimus voluptas aliquid sed temporibus, excepturi, modi voluptatibus. Adipisci.</p>
 			<button type="button" id="editProfileBtn" class="btn btn-sm btn-info">Edit Profile</button>
 		</div>
 
-		<form action="/users/<%= @user.id %>/follow" method="POST">
-			<input type="hidden" name="_method" value="DELETE" />
-			<input type="submit" value="DELETE">
-		</form>
-
 		<div class="col-md-8">
+
 			<input type="text" class="form-control" placeholder="Post Title">
 			<textarea class="form-control" id="postBodyForm" rows="6"></textarea>
 			<button type="submit" class="btn btn-primary">Submit</button>
+
 		</div>
 	</div>
 	<div class="row">

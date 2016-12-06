@@ -8,7 +8,6 @@ require './hasher'
 require './mockup_routes'
 
 enable :sessions
-set :sessions, true
 
 db_username = 'root'
 db_password = 'root'
@@ -23,16 +22,15 @@ get '/' do
   # if user is logged, show their posts
   # else show latest 10 posts of any user
   @posts = current_user ? current_user.posts : Post.take(10)
-
   erb :index
 end
 
 get '/register' do
-  erb :register  
+  erb :register
 end
 
 post '/register' do
-  
+
   u = User.create({
       name: params[:name],
       username: params[:username],
@@ -58,27 +56,18 @@ post '/users' do
   redirect '/'
 end
 
-get '/foo' do
-  str = Hasher.make('password')
-  str += '<br />'
-  str += Hasher.make('password')
-  str
-end
-
 post '/login' do
   query = 'SELECT * FROM users WHERE username = :field OR email = :field'
   @user = User.find_by_sql([query, {field: params[:sign_in_field]}]).first
 
-
-  # if @user && @user.password == Hasher.make(params[:sign_in_field])
-  if @user
+  if @user && Hasher.verify(@user, params[:password])
     session[:user_id] = @user.id
     flash[:notice] = "You've been signed in successfully."
+    redirect '/'
   else
     flash[:error] = "There was a problem signing you in."
     redirect '/login'
   end
-  redirect '/'
 end
 
 get '/accounts/:id/edit' do
@@ -125,7 +114,14 @@ put '/posts/:id' do
 end
 
 post '/users/:id/follow' do
-#follows target
+  @target = User.find(params[:id])
+
+  if @target.nil?
+    status(404)
+    erb :oops
+  else
+    Follow.create(user_id: current_user.id, params[:id])
+  end
 end
 
 delete '/users/:id/follow' do
