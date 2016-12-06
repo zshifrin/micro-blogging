@@ -61,6 +61,8 @@ end
 # DELETE USER
 #
 delete '/users/:id' do
-  User.find(params[:id]).destroy
-  redirect '/register'
+  if current_user.id == params[:id]
+    User.find(params[:id]).destroy
+    redirect '/register'
+  end
 end
