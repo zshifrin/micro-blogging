@@ -23,6 +23,7 @@ get '/' do
   # if user is logged, show their posts
   # else show latest 10 posts of any user
   @posts = current_user ? current_user.posts : Post.take(10)
+
   erb :index
 end
 
@@ -66,6 +67,7 @@ post '/login' do
     flash[:notice] = "You've been signed in successfully."
   else
     flash[:error] = "There was a problem signing you in."
+    redirect '/login'
   end
   redirect '/'
 end
