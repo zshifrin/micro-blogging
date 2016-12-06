@@ -1,10 +1,11 @@
 require 'bcrypt'
 
 class Hasher
-
-  SALT = "$2a$10$0QhRjvut5MuGT02Orlspy."
-
   def self.make(password)
-    BCrypt::Engine.hash_secret(password, SALT)
+    BCrypt::Password.create(password)
+  end
+
+  def self.verify(user, password)
+    BCrypt::Password.new(user.password) == password
   end
 end
