@@ -47,7 +47,7 @@ end
 # CREATE USER
 #
 post '/users' do
-  User.create({
+  u = User.create({
     username: params[:username],
     email: params[:email],
     password: Hasher.make(params[:password]),
@@ -55,6 +55,8 @@ post '/users' do
     bio: params[:bio],
     photo: params[:photo]
   })
+
+  session[:user_id] = u.id
 
   redirect '/'
 end
