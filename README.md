@@ -24,6 +24,7 @@ GET /users/:id/edit - Shows form for editing an account
 ### Action Routes
 ```
 POST   /login             - Log user in
+GET    /logout            - Log user out
 POST   /users             - Store user in DB
 POST   /posts             - Store post in DB
 DELETE /posts/:id         - Delete post :id

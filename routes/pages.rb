@@ -35,6 +35,13 @@ post '/login' do
 end
 
 #
+# GET LOGOUT
+#
+get '/logout' do
+  session[:user_id] = nil
+end
+
+#
 # SHOW REGISTER
 #
 get '/register' do
