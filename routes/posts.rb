@@ -7,7 +7,7 @@ post '/posts' do
     user_id: current_user.id
   })
 
-  redirect "/#{current_user.username}"
+  redirect "profiles/#{current_user.username}"
 end
 
 #

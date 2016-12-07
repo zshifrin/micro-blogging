@@ -4,34 +4,35 @@
 			<img src="http://placehold.it/250x250" class="img-responsive img-rounded" alt="responsive profile image">
 			<h2><%= @user.name %></h2>
 
-<!-- 			if current user is following this user show unfollow button
-			else
-			show follow button -->
-			
-			<form action="/users/<%= @user.id %>/follow" method="POST">
-				<input id="follow-btn" class="btn btn-default btn-sm" type="submit" value="Follow">
-			</form>
+			<% if current_user.id != @user.id %>
 
-			<form action="/users/<%= @user.id %>/follow" method="POST">
-				<input type="hidden" name="_method" value="DELETE" />
-				<input class="btn btn-warning btn-sm" type="submit" value="Unfollow">
-			</form>
+				<% if current_user.following?(@user) %>
+					<form action="/users/<%= @user.id %>/follow" method="POST">
+						<input type="hidden" name="_method" value="DELETE" />
+						<input class="btn btn-warning btn-sm" type="submit" value="Unfollow">
+					</form>
+				<% else %>
+					<form action="/users/<%= @user.id %>/follow" method="POST">
+						<input id="follow-btn" class="btn btn-default btn-sm" type="submit" value="Follow">
+					</form>
+				<% end %>
+			<% end %>
 
-			<p id="profileBio">Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate perspiciatis nam facilis aperiam fuga itaque incidunt delectus, reprehenderit veniam ratione minima, possimus voluptas aliquid sed temporibus, excepturi, modi voluptatibus. Adipisci.</p>
+			<p id="profileBio"><%= @user.bio %></p>
 			<button type="button" id="editProfileBtn" class="btn btn-sm btn-info">Edit Profile</button>
 		</div>
 
 		<div class="col-md-8">
+			<form action="/posts" method="POST">
+				<input class="form-control" name="content" />
+				<input type="submit" class="btn btn-primary" />
+			</form>
 
-			<input type="text" class="form-control" placeholder="Post Title">
-			<textarea class="form-control" id="postBodyForm" rows="6"></textarea>
-			<button type="submit" class="btn btn-primary">Submit</button>
-
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-4">
-			<h1>User's Posts Go here</h1>
+			<div class="user-posts">
+				<% @posts.each do |p| %>
+					<div><%= p.content %></div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

@@ -12,6 +12,7 @@ end
 #
 post '/users/:id/edit' do
   user = User.find(params[:id])
+
   user.username = params[:username]
   user.email = params[:email]
   user.bio = params[:bio]
@@ -32,6 +33,7 @@ end
 get '/profiles/:username' do
 
   @user = User.where(username: params[:username]).first
+  @posts = @user.posts.order(created_at: :desc)
 
   if @user.nil?
     status(404)

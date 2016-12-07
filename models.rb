@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :following, through: :active_relationships,  source: :target
 
+  def following?(user)
+    self.following.include?(user)
+  end
+
   def follow(target)
     Follow.create(user_id: id, target_id: target.id)
   end
