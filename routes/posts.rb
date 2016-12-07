@@ -14,7 +14,8 @@ end
 # DELETE POST
 #
 delete '/posts/:id' do
-  # delete post :id
+	Post.find(params[:id]).destroy
+	redirect back
 end
 
 #
