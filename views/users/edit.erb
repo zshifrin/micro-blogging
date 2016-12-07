@@ -20,6 +20,10 @@
                 <br />
 	           <input type="submit" value="Save" id="submitButton" class="btn btn-primary">
 	        </form>
+            <form class="pull-right" action="/users/<%= @user.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input id="delete-account" class="btn btn-danger" type="submit" value="Delete Account">
+            </form>
 	    </div>
     </div>
 </div>

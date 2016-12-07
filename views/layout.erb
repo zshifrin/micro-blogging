@@ -30,6 +30,10 @@
         </div>
     </nav>
 
+    <% if current_user %>
+        <h3 class="text-center">Welcome to Pygmy <%= current_user.username %>!</h3>
+    <% end %>
+
     <div id="main">
         <div class="container">
             <%= yield %>

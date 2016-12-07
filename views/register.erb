@@ -1,6 +1,6 @@
 <div class="form">
     <h1>Please Register</h1>
-    <form method="post">
+    <form method="post" action="/users">
         <input type="text" name="name" placeholder="Your Name" class="form-control" required>
         <br />
         <input type="text" name="username" placeholder="Username" class="form-control" required>
@@ -10,8 +10,11 @@
         <input type="email" name="email" placeholder="Email Address" class="form-control" required>
         <br>
         <textarea name="bio" placeholder="Bio" class="form-control"></textarea>
-        <br>
-        <input type="file" name="photo">
+        <br />
+        <label class="btn btn-default btn-file">
+            Upload Photo <input type="file" name="photo" style="display: none;">
+        </label>
+        <br />
         <br />
         <input type="submit" value="Submit" id="submitButton" class="btn btn-primary">
     </form>
