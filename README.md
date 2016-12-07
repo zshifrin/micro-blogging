@@ -18,7 +18,7 @@ GET /                  - Home Page (lists posts)
 GET /login
 GET /register
 GET /:username         - Show user profile
-GET /accounts/:id/edit - Shows form for editing an account
+GET /users/:id/edit - Shows form for editing an account
 ```
 
 ### Action Routes
@@ -30,5 +30,5 @@ DELETE /posts/:id         - Delete post :id
 PUT    /posts/:id         - Update post :id
 POST   /users/:id/follow  - Current user follows user :id
 DELETE /users/:id/follow  - Current user unfollows user :id
-DELETE /accounts/:id      - Deletes account :id
+DELETE /users/:id      - Deletes account :id
 ```

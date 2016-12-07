@@ -65,8 +65,16 @@ end
 # DELETE USER
 #
 delete '/users/:id' do
-  if current_user.id == params[:id]
-    User.find(params[:id]).destroy
-    redirect '/register'
+
+  if session[:user_id] != params[:id]
+    status(404)
+    erb :oops
   end
+
+  puts "Param: #{params[:id]}"
+  puts "USER: #{current_user.id}"
+
+  User.find(params[:id]).destroy
+  session[:user_id] = nil
+  redirect '/register'
 end
